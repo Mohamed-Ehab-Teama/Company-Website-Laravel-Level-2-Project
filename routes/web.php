@@ -21,6 +21,11 @@ Route::name('front.')->group(function() {
     Route::view('/services', 'front.services')->name('services');
 });
 
+
+Route::name('admin.')->prefix('/admin')->group(function () {
+    Route::view('/', 'admin.index')->name('index');
+});
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
