@@ -8,6 +8,9 @@
     </form>
     <ul class="nav">
         <li class="nav-item">
+            <x-language-toggle-button></x-language-toggle-button>
+        </li>
+        <li class="nav-item">
             <a class="nav-link text-muted my-2" href="#" id="modeSwitcher" data-mode="light">
                 <i class="fe fe-sun fe-16"></i>
             </a>
@@ -32,12 +35,12 @@
                 </span>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Profile</a>
-                <a class="dropdown-item" href="#">Settings</a>
-                <a class="dropdown-item" href="#">Activities</a>
+                <a class="dropdown-item" href="#">{{__('keywords.profile')}}</a>
+                <a class="dropdown-item" href="#">{{__('keywords.setting')}}</a>
+                <a class="dropdown-item" href="#">{{__('keywords.activities')}}</a>
                 <form method="POST" action="{{ route('admin.logout') }}">
                     @csrf
-                    <button class="dropdown-item" type="submit"> LogOut </button>
+                    <button class="dropdown-item" type="submit"> {{__('keywords.logout')}} </button>
                 </form>
             </div>
         </li>

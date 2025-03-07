@@ -1,10 +1,11 @@
+
 <!doctype html>
 <html lang="en">
 
 @include('admin.partials.head')
 
 
-<body class="vertical  light  ">
+<body class="vertical  light @if (Mcamara\LaravelLocalization\Facades\LaravelLocalization::getCurrentLocale() == 'ar') rtl @endif  ">
     <div class="wrapper">
         @include('admin.partials.nav')
 

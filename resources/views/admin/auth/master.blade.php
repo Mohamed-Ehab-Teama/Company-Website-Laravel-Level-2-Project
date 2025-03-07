@@ -1,3 +1,8 @@
+@php
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+    $dir = LaravelLocalization::getCurrentLocale() == 'ar' ? 'admin-assets-rtl' : 'admin-assets';
+@endphp
+
 <!doctype html>
 <html lang="en">
 
@@ -7,34 +12,38 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
-    <title> Dashboard - @yield('title') </title>
+    <title> {{ __('keywords.dashboard') }} - @yield('title') </title>
     <!-- Simple bar CSS -->
-    <link rel="stylesheet" href=" {{ asset('admin-assets') }}/css/simplebar.css">
+    <link rel="stylesheet" href=" {{ asset($dir) }}/css/simplebar.css">
     <!-- Fonts CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <!-- Icons CSS -->
-    <link rel="stylesheet" href=" {{ asset('admin-assets') }}/css/feather.css">
+    <link rel="stylesheet" href=" {{ asset($dir) }}/css/feather.css">
     <!-- Date Range Picker CSS -->
-    <link rel="stylesheet" href=" {{ asset('admin-assets') }}/css/daterangepicker.css">
+    <link rel="stylesheet" href=" {{ asset($dir) }}/css/daterangepicker.css">
     <!-- App CSS -->
-    <link rel="stylesheet" href=" {{ asset('admin-assets') }}/css/app-light.css" id="lightTheme">
-    <link rel="stylesheet" href=" {{ asset('admin-assets') }}/css/app-dark.css" id="darkTheme" disabled>
+    <link rel="stylesheet" href=" {{ asset($dir) }}/css/app-light.css" id="lightTheme">
+    <link rel="stylesheet" href=" {{ asset($dir) }}/css/app-dark.css" id="darkTheme" disabled>
 </head>
 
-<body class="light ">
+<body class="light 
+@if (LaravelLocalization::getCurrentLocale() == 'ar') rtl @endif
+">
     @yield('content')
 
 
-    <script src=" {{ asset('admin-assets') }}/js/jquery.min.js"></script>
-    <script src=" {{ asset('admin-assets') }}/js/popper.min.js"></script>
-    <script src=" {{ asset('admin-assets') }}/js/moment.min.js"></script>
-    <script src=" {{ asset('admin-assets') }}/js/bootstrap.min.js"></script>
-    <script src=" {{ asset('admin-assets') }}/js/simplebar.min.js"></script>
-    <script src=' {{ asset('admin-assets') }}/js/daterangepicker.js'></script>
-    <script src=' {{ asset('admin-assets') }}/js/jquery.stickOnScroll.js'></script>
-    <script src=" {{ asset('admin-assets') }}/js/tinycolor-min.js"></script>
-    <script src=" {{ asset('admin-assets') }}/js/config.js"></script>
-    <script src=" {{ asset('admin-assets') }}/js/apps.js"></script>
+    <script src=" {{ asset($dir) }}/js/jquery.min.js"></script>
+    <script src=" {{ asset($dir) }}/js/popper.min.js"></script>
+    <script src=" {{ asset($dir) }}/js/moment.min.js"></script>
+    <script src=" {{ asset($dir) }}/js/bootstrap.min.js"></script>
+    <script src=" {{ asset($dir) }}/js/simplebar.min.js"></script>
+    <script src=' {{ asset($dir) }}/js/daterangepicker.js'></script>
+    <script src=' {{ asset($dir) }}/js/jquery.stickOnScroll.js'></script>
+    <script src=" {{ asset($dir) }}/js/tinycolor-min.js"></script>
+    <script src=" {{ asset($dir) }}/js/config.js"></script>
+    <script src=" {{ asset($dir) }}/js/apps.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
     <script>
