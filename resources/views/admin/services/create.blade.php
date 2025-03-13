@@ -1,0 +1,61 @@
+@extends('admin.master')
+
+@section('title', __('keywords.create_service'))
+
+
+@section('content')
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-12">
+
+            <div class="page-title-box d-sm-flex align-items-center justify-content-between mb-4">
+                <div class="col">
+                    <h2 class="h5 page-title"> {{__('keywords.services')}}! </h2>
+                </div>
+
+            </div>
+
+            <form action=" {{ route('admin.services.store') }} " method="POST">
+                @csrf
+
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group mb-3">
+                                <label for="simpleinput"> {{ __('keywords.service') }} </label>
+                                <input type="text" id="simpleinput" class="form-control" name="name">
+                            </div>
+                            @error('name')
+                                <span class="text-danger"> {{ $message }} </span>
+                            @enderror
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="form-group mb-3">
+                                <label for="example-helping"> {{ __('keywords.icon') }} </label>
+                                <input type="text" id="example-helping" class="form-control" name="icon">
+                            </div>
+                            @error('icon')
+                                <span class="text-danger"> {{ $message }} </span>
+                            @enderror
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group mb-3">
+                                <label for="example-email"> {{__('keywords.description')}} </label>
+                                <textarea type="email" id="example-email" class="form-control" name="description"></textarea>
+                            </div>
+                            @error('description')
+                                <span class="text-danger"> {{ $message }} </span>
+                            @enderror
+                        </div>
+                    </div>
+                    <button class="btn btn-primary my-3" type="submit"> {{ __('keywords.create_service') }} </button>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+
+    @endsection
