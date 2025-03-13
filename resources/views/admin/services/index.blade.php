@@ -21,9 +21,7 @@
 
             </div>
 
-            @if (session('success'))
-            <div class="text-center alert alert-success"> {{ session('success') }} </div>
-            @endif
+            <x-success-alert-component></x-success-alert-component>
 
             <!-- Table -->
             <table class="table table-hover">
@@ -69,11 +67,7 @@
                     </tr>
                     @endforeach
                     @else
-                    <tr>
-                        <td colspan="4">
-                            <span class="alert alert-danger"> {{ __('keywords.no_data') }} </span>
-                        </td>
-                    </tr>
+                    <x-empty-alert-component></x-empty-alert-component>
                     @endif
                 </tbody>
             </table>
