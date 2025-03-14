@@ -19,6 +19,14 @@
     </div>
 
     @include('admin.partials.scripts')
+    <script>
+        function confirmDelete(id) {
+            if (confirm('Are You Sure You wanna delete this Item ?')) 
+            {
+                document.getElementById('formToDelete-'+id).submit()
+            }
+        }
+    </script>
 </body>
 
 </html>

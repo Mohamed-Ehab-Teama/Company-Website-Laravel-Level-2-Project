@@ -13,10 +13,12 @@
                     <h2 class="h5 page-title"> {{__('keywords.services')}}! </h2>
                 </div>
 
+                {{-- Add New Button --}}
                 <div class="page-title-right">
-                    <a href=" {{ route('admin.services.create') }} " class="btn btn-primary">
-                        {{ __('keywords.create_service') }}
-                    </a>
+                    {{-- <a href=" {{ route('admin.services.create') }} " class="btn btn-primary">
+                        {{ __('keywords.add_new') }}
+                    </a> --}}
+                    <x-action-button-component href="{{ route('admin.services.create') }}" type="create"></x-action-button-component>
                 </div>
 
             </div>
@@ -45,23 +47,29 @@
                         <td>
 
                             <!-- Show -->
-                            <a href=" {{ route('admin.services.show', ['service' => $service]) }} " class="btn btn-primary btn-sm mx-2">
+                            <x-action-button-component href=" {{ route('admin.services.show', ['service' => $service]) }} " type="show" ></x-action-button-component>
+                            {{-- <a href=" {{ route('admin.services.show', ['service' => $service]) }} " class="btn btn-primary btn-sm mx-2">
                                 <i class="fe fe-eye fe-16"></i>
-                            </a>
+                            </a> --}}
+
 
                             <!-- Edit -->
-                            <a href=" {{ route('admin.services.edit', ['service' => $service]) }} " class="btn btn-success btn-sm mx-2">
+                            <x-action-button-component href=" {{ route('admin.services.edit', ['service' => $service]) }} " type="edit" ></x-action-button-component>
+                            {{-- <a href=" {{ route('admin.services.edit', ['service' => $service]) }} " class="btn btn-success btn-sm mx-2">
                                 <i class="fe fe-edit fe-16"></i>
-                            </a>
+                            </a> --}}
+
 
                             <!-- Delete -->
-                            <form id="formToDelete-{{ $service->id }}" class="d-inline" method="POST" action="{{ route('admin.services.destroy', ['service' => $service]) }}">
+                            <x-delete-button-component href="{{ route('admin.services.destroy', ['service' => $service]) }}" id="{{ $service->id }}" ></x-delete-button-component>
+                            {{-- <form id="formToDelete-{{ $service->id }}" class="d-inline" method="POST" action="{{ route('admin.services.destroy', ['service' => $service]) }}">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger btn-sm mx-2" type="button" onclick="confirmDelete( {{ $service->id }} )">
                                     <i class="fe fe-trash fe-16"></i>
                                 </button>
-                            </form>
+                            </form> --}}
+                            
 
                         </td>
                     </tr>
@@ -77,13 +85,5 @@
         </div>
     </div>
 
-    <script>
-        function confirmDelete(id) {
-            if (confirm('Are You Sure You wanna delete this Item ?')) 
-            {
-                document.getElementById('formToDelete-'+id).submit()
-            }
-        }
-    </script>
 
     @endsection

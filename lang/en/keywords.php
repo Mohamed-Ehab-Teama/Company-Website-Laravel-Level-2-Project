@@ -29,6 +29,7 @@ return [
     'name' => 'Name',
     'icon' => 'Icon',
     'description' => 'Description',
+    'add_new' => 'Add New',
     'create_service' => 'Create Service',
     'show_service' => 'Show Service',
     'edit_service' => 'Edit Service',
