@@ -20,39 +20,41 @@
 
                 <div class="card-body">
                     <div class="row">
+                        <!-- Title -->
                         <div class="col-md-6">
                             <div class="form-group mb-3">
-                                <label for="simpleinput"> {{ __('keywords.service') }} </label>
-                                <input type="text" id="simpleinput" class="form-control" name="name">
+                                <x-form-lable field="title"></x-form-lable>
+                                <input type="text" id="title" class="form-control" name="name">
                             </div>
-                            @error('name')
-                                <span class="text-danger"> {{ $message }} </span>
-                            @enderror
-                        </div>
-                        
-                        <div class="col-md-6">
-                            <div class="form-group mb-3">
-                                <label for="example-helping"> {{ __('keywords.icon') }} </label>
-                                <input type="text" id="example-helping" class="form-control" name="icon">
-                            </div>
-                            @error('icon')
-                                <span class="text-danger"> {{ $message }} </span>
-                            @enderror
+                            <x-error-message field="name"></x-error-message>
                         </div>
 
+                        <!-- Icon -->
+                        <div class="col-md-6">
+                            <div class="form-group mb-3">
+                                <x-form-lable field="icon"></x-form-lable>
+                                <input type="text" id="icon" class="form-control" name="icon">
+                            </div>
+                            <x-error-message field="icon"></x-error-message>
+                        </div>
+
+                        <!-- Description -->
                         <div class="col-md-12">
                             <div class="form-group mb-3">
-                                <label for="example-email"> {{__('keywords.description')}} </label>
-                                <textarea type="email" id="example-email" class="form-control" name="description"></textarea>
+                                <x-form-lable field="description"></x-form-lable>
+                                <textarea type="email" id="description" class="form-control" name="description"></textarea>
                             </div>
-                            @error('description')
-                                <span class="text-danger"> {{ $message }} </span>
-                            @enderror
+                            <x-error-message field="description"></x-error-message>
                         </div>
                     </div>
-                    <button class="btn btn-primary my-3" type="submit"> {{ __('keywords.create_service') }} </button>
+
+                    <!-- Submit -->
+                    <x-submit-button text="{{ __('keywords.create_service') }}"></x-submit-button>
                 </div>
             </form>
+
+            <!-- Go Back Button -->
+            <x-go-back-button href="{{ route('admin.services.index') }}" ></x-go-back-button>
 
 
         </div>

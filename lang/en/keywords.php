@@ -24,6 +24,7 @@ return [
     
     // Services Page
     'service' => 'Service',
+    'title' => 'Title',
     'no_data' => 'No Data Avaliable',
     'action' => 'Action',
     'name' => 'Name',

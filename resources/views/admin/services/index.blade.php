@@ -62,13 +62,7 @@
 
                             <!-- Delete -->
                             <x-delete-button-component href="{{ route('admin.services.destroy', ['service' => $service]) }}" id="{{ $service->id }}" ></x-delete-button-component>
-                            {{-- <form id="formToDelete-{{ $service->id }}" class="d-inline" method="POST" action="{{ route('admin.services.destroy', ['service' => $service]) }}">
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-danger btn-sm mx-2" type="button" onclick="confirmDelete( {{ $service->id }} )">
-                                    <i class="fe fe-trash fe-16"></i>
-                                </button>
-                            </form> --}}
+                            
                             
 
                         </td>

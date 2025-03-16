@@ -16,29 +16,34 @@
 
             <div class="card-body">
                 <div class="row">
+
+                    <!-- Title -->
                     <div class="col-md-6">
                         <div class="form-group mb-3">
-                            <label for="simpleinput"> {{ __('keywords.service') }} </label>
-                            <label for="simpleinput" class="form-control"> {{ $service->name }} </label>
+                            <x-form-lable field="title"></x-form-lable>
+                            <label for="title" class="form-control"> {{ $service->name }} </label>
                         </div>
                     </div>
 
+                    <!-- Icon -->
                     <div class="col-md-6">
                         <div class="form-group mb-3">
-                            <label for="example-helping"> {{ __('keywords.icon') }} </label>
-                            <label for="simpleinput" class="form-control"> {{ $service->icon }} </label>
+                            <x-form-lable field="icon"></x-form-lable>
+                            <label for="icon" class="form-control"> {{ $service->icon }} </label>
                         </div>
                     </div>
 
+                    <!-- Description -->
                     <div class="col-md-12">
                         <div class="form-group mb-3">
-                            <label for="example-email"> {{__('keywords.description')}} </label>
-                            <label for="simpleinput" class="form-control"> {{ $service->description }} </label>
+                            <x-form-lable field="description"></x-form-lable>
+                            <label for="description" class="form-control"> {{ $service->description }} </label>
                         </div>
                     </div>
                 </div>
 
-            <a class="btn btn-warning" href="{{ route('admin.services.index') }}"> Go Back </a>
+                <!-- Go Back Button -->
+                <x-go-back-button href="{{ route('admin.services.index') }}" ></x-go-back-button>
 
             </div>
 
