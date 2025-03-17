@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\SubscriberController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
@@ -38,7 +39,12 @@ Route::name('admin.')->prefix(LaravelLocalization::setLocale() . '/admin')
             
             // ==========================   Features Module
             Route::controller(MessageController::class)->group(function() {
-                Route::resource('messages',MessageController::class)->only(['index','show','destroy']);
+                Route::resource('messages',MessageController::class)->only(['index', 'show', 'destroy']);
+            });
+            
+            // ==========================   Subscribers Module
+            Route::controller(SubscriberController::class)->group(function() {
+                Route::resource('subscribers',SubscriberController::class)->only(['index', 'destroy']);
             });
         });
 

@@ -46,6 +46,11 @@
         <ul class="navbar-nav flex-fill w-100 mb-2">
             <x-sidebar-tab-component href="{{ route('admin.messages.index')}}" icon="fe-message-square" name="{{ __('keywords.messages') }}" ></x-sidebar-tab-component>
         </ul>
+        
+        <!-- Subscribers -->
+        <ul class="navbar-nav flex-fill w-100 mb-2">
+            <x-sidebar-tab-component href="{{ route('admin.subscribers.index')}}" icon="fe-users" name="{{ __('keywords.subscribers') }}" ></x-sidebar-tab-component>
+        </ul>
 
     </nav>
 </aside>

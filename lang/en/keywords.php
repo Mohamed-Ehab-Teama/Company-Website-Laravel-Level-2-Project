@@ -53,6 +53,11 @@ return [
     'message'           => 'Message',
     'messages'          => 'Messages',
     'show_message'      => 'Show Message',
-    'created_at'      => 'Created At',
+    'created_at'        => 'Created At',
+    
+    // Messages Page
+    'subscribers'           => 'Subscribers',
+    'subscribtion_date'           => 'Subscribtion Date',
+
 
 ];
