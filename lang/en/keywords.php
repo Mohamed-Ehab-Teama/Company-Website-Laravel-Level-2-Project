@@ -14,27 +14,45 @@ return [
     'logout'   => 'Logout',
 
     // NavBar
-    'profile' => 'Profile',
-    'setting' => 'Settings',
-    'activities' => 'Activities',
-    
+    'profile'       => 'Profile',
+    'setting'       => 'Settings',
+    'activities'    => 'Activities',
+
     // SideBar
-    'components' => 'Components',
-    'services' => 'Services',
-    
+    'components'    => 'Components',
+    'services'      => 'Services',
+    'features'      => 'Features',
+
+    // Common Page
+    'created_successfully'  => 'Service has been Created Successfully',
+    'updated_successfully'  => 'Service has been Updated Successfully',
+    'deleted_successfully'  => 'Service has been Deleted Successfully',
+    'no_data'               => 'No Data Avaliable',
+    'add_new'               => 'Add New',
+    'action'                => 'Action',
+    'go_back'               => 'Go Back',
+
     // Services Page
-    'service' => 'Service',
-    'title' => 'Title',
-    'no_data' => 'No Data Avaliable',
-    'action' => 'Action',
-    'name' => 'Name',
-    'icon' => 'Icon',
-    'description' => 'Description',
-    'add_new' => 'Add New',
-    'create_service' => 'Create Service',
-    'show_service' => 'Show Service',
-    'edit_service' => 'Edit Service',
-    'created_successfully' => 'Service has been Created Successfully',
-    'updated_successfully' => 'Service has been Updated Successfully',
-    'deleted_successfully' => 'Service has been Deleted Successfully',
+    'name'              => 'Name',
+    'icon'              => 'Icon',
+    'description'       => 'Description',
+    'service'           => 'Service',
+    'title'             => 'Title',
+    'create_service'    => 'Create Service',
+    'show_service'      => 'Show Service',
+    'edit_service'      => 'Edit Service',
+
+    // Fratures Page
+    'feature'           => 'Feature',
+    'create_feature'    => 'Create Feature',
+    'show_feature'      => 'Show Feature',
+    'edit_feature'      => 'Edit Feature',
+
+    // Messages Page
+    'subject'           => 'Subject',
+    'message'           => 'Message',
+    'messages'          => 'Messages',
+    'show_message'      => 'Show Message',
+    'created_at'      => 'Created At',
+
 ];

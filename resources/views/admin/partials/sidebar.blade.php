@@ -36,6 +36,16 @@
         <ul class="navbar-nav flex-fill w-100 mb-2">
             <x-sidebar-tab-component href="{{ route('admin.services.index')}}" icon="fe-briefcase" name="{{ __('keywords.services') }}" ></x-sidebar-tab-component>
         </ul>
+        
+        <!-- Features -->
+        <ul class="navbar-nav flex-fill w-100 mb-2">
+            <x-sidebar-tab-component href="{{ route('admin.features.index')}}" icon="fe-bookmark" name="{{ __('keywords.features') }}" ></x-sidebar-tab-component>
+        </ul>
+        
+        <!-- Messages -->
+        <ul class="navbar-nav flex-fill w-100 mb-2">
+            <x-sidebar-tab-component href="{{ route('admin.messages.index')}}" icon="fe-message-square" name="{{ __('keywords.messages') }}" ></x-sidebar-tab-component>
+        </ul>
 
     </nav>
 </aside>
