@@ -9,6 +9,7 @@ use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\SettingController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 
@@ -64,6 +65,11 @@ Route::name('admin.')->prefix(LaravelLocalization::setLocale() . '/admin')
             // ==========================   members Module
             Route::controller(MemberController::class)->group(function() {
                 Route::resource('members',MemberController::class);
+            });
+            
+            // ==========================   settings Module
+            Route::controller(SettingController::class)->group(function() {
+                Route::resource('settings',SettingController::class)->only(['index', 'update']);
             });
         });
 

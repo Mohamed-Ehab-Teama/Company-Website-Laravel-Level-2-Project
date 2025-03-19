@@ -31,6 +31,8 @@ return [
     'add_new'               => 'Add New',
     'action'                => 'Action',
     'go_back'               => 'Go Back',
+    'submit'               => 'Submit',
+    'update'               => 'Update',
 
     // Services Page
     'name'              => 'Name',
@@ -81,5 +83,12 @@ return [
     'create_member'         => 'Add Member',
     'show_member'           => 'Show Member',
     'edit_member'           => 'Edit Member',
+
+    // settings Page
+    'settings'              => 'Settings',
+    'address'               => 'Address',
+    'phone'                 => 'phone',
+    'youtube'               => 'youtube',
+    'instagram'             => 'instagram',
 
 ];

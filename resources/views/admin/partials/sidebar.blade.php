@@ -73,6 +73,12 @@
             <x-sidebar-tab-component href="{{ route('admin.members.index') }}" icon="fe-users"
                 name="{{ __('keywords.members') }}"></x-sidebar-tab-component>
         </ul>
+        
+        <!-- settings -->
+        <ul class="navbar-nav flex-fill w-100 mb-2">
+            <x-sidebar-tab-component href="{{ route('admin.settings.index') }}" icon="fe-settings"
+                name="{{ __('keywords.settings') }}"></x-sidebar-tab-component>
+        </ul>
 
     </nav>
 </aside>
