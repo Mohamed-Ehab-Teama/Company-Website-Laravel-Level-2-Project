@@ -61,6 +61,12 @@
             <x-sidebar-tab-component href="{{ route('admin.testimonials.index') }}" icon="fe-message-circle"
                 name="{{ __('keywords.testimonials') }}"></x-sidebar-tab-component>
         </ul>
+        
+        <!-- Companies -->
+        <ul class="navbar-nav flex-fill w-100 mb-2">
+            <x-sidebar-tab-component href="{{ route('admin.companies.index') }}" icon="fe-globe"
+                name="{{ __('keywords.companies') }}"></x-sidebar-tab-component>
+        </ul>
 
     </nav>
 </aside>
