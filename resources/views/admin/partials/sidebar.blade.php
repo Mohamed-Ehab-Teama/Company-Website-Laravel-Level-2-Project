@@ -21,7 +21,7 @@
         <!-- Home page -->
         <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item w-100">
-                <a class="nav-link" href="{{ route('admin.index')}}">
+                <a class="nav-link" href="{{ route('admin.index') }}">
                     <i class="fe fe-home fe-16"></i>
                     <span class="ml-3 item-text"> {{ __('keywords.dashboard') }} </span>
                 </a>
@@ -31,25 +31,35 @@
         <p class="text-muted nav-heading mt-4 mb-1">
             <span> {{ __('keywords.components') }} </span>
         </p>
-        
+
         <!-- Services -->
         <ul class="navbar-nav flex-fill w-100 mb-2">
-            <x-sidebar-tab-component href="{{ route('admin.services.index')}}" icon="fe-briefcase" name="{{ __('keywords.services') }}" ></x-sidebar-tab-component>
+            <x-sidebar-tab-component href="{{ route('admin.services.index') }}" icon="fe-briefcase"
+                name="{{ __('keywords.services') }}"></x-sidebar-tab-component>
         </ul>
-        
+
         <!-- Features -->
         <ul class="navbar-nav flex-fill w-100 mb-2">
-            <x-sidebar-tab-component href="{{ route('admin.features.index')}}" icon="fe-bookmark" name="{{ __('keywords.features') }}" ></x-sidebar-tab-component>
+            <x-sidebar-tab-component href="{{ route('admin.features.index') }}" icon="fe-bookmark"
+                name="{{ __('keywords.features') }}"></x-sidebar-tab-component>
         </ul>
-        
+
         <!-- Messages -->
         <ul class="navbar-nav flex-fill w-100 mb-2">
-            <x-sidebar-tab-component href="{{ route('admin.messages.index')}}" icon="fe-message-square" name="{{ __('keywords.messages') }}" ></x-sidebar-tab-component>
+            <x-sidebar-tab-component href="{{ route('admin.messages.index') }}" icon="fe-message-square"
+                name="{{ __('keywords.messages') }}"></x-sidebar-tab-component>
         </ul>
-        
+
         <!-- Subscribers -->
         <ul class="navbar-nav flex-fill w-100 mb-2">
-            <x-sidebar-tab-component href="{{ route('admin.subscribers.index')}}" icon="fe-users" name="{{ __('keywords.subscribers') }}" ></x-sidebar-tab-component>
+            <x-sidebar-tab-component href="{{ route('admin.subscribers.index') }}" icon="fe-users"
+                name="{{ __('keywords.subscribers') }}"></x-sidebar-tab-component>
+        </ul>
+
+        <!-- Testimonials -->
+        <ul class="navbar-nav flex-fill w-100 mb-2">
+            <x-sidebar-tab-component href="{{ route('admin.testimonials.index') }}" icon="fe-message-circle"
+                name="{{ __('keywords.testimonials') }}"></x-sidebar-tab-component>
         </ul>
 
     </nav>

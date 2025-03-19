@@ -3,6 +3,7 @@
 use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\SubscriberController;
+use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
@@ -24,6 +25,7 @@ Route::name('admin.')->prefix(LaravelLocalization::setLocale() . '/admin')
     ->group(function () {
 
         Route::middleware('auth')->group(function () {
+
             // ==========================   Home Page
             Route::view('/', 'admin.index')->name('index');
 
@@ -37,7 +39,7 @@ Route::name('admin.')->prefix(LaravelLocalization::setLocale() . '/admin')
                 Route::resource('features',FeatureController::class);
             });
             
-            // ==========================   Features Module
+            // ==========================   Messages Module
             Route::controller(MessageController::class)->group(function() {
                 Route::resource('messages',MessageController::class)->only(['index', 'show', 'destroy']);
             });
@@ -45,6 +47,11 @@ Route::name('admin.')->prefix(LaravelLocalization::setLocale() . '/admin')
             // ==========================   Subscribers Module
             Route::controller(SubscriberController::class)->group(function() {
                 Route::resource('subscribers',SubscriberController::class)->only(['index', 'destroy']);
+            });
+            
+            // ==========================   Testimonials Module
+            Route::controller(TestimonialController::class)->group(function() {
+                Route::resource('testimonials',TestimonialController::class);
             });
         });
 

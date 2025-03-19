@@ -54,10 +54,17 @@ return [
     'messages'          => 'Messages',
     'show_message'      => 'Show Message',
     'created_at'        => 'Created At',
-    
-    // Messages Page
-    'subscribers'           => 'Subscribers',
-    'subscribtion_date'           => 'Subscribtion Date',
 
+    // Subscribers Page
+    'subscribers'           => 'Subscribers',
+    'subscribtion_date'     => 'Subscribtion Date',
+
+    // Testimonials Page
+    'testimonials'          => 'Testimonials',
+    'position'              => 'Position',
+    'image'                 => 'Image',
+    'create_testimonial'    => 'Create Testimonial',
+    'show_testimonial'      => 'Show Testimonial',
+    'edit_testimonial'      => 'Edit Testimonial',
 
 ];
