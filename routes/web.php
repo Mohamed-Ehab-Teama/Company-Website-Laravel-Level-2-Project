@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\FeatureController;
+use App\Http\Controllers\MemberController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\SubscriberController;
 use App\Http\Controllers\TestimonialController;
@@ -58,6 +59,11 @@ Route::name('admin.')->prefix(LaravelLocalization::setLocale() . '/admin')
             // ==========================   Companies Module
             Route::controller(CompanyController::class)->group(function() {
                 Route::resource('companies',CompanyController::class);
+            });
+            
+            // ==========================   members Module
+            Route::controller(MemberController::class)->group(function() {
+                Route::resource('members',MemberController::class);
             });
         });
 

@@ -66,11 +66,20 @@ return [
     'create_testimonial'    => 'Create Testimonial',
     'show_testimonial'      => 'Show Testimonial',
     'edit_testimonial'      => 'Edit Testimonial',
-    
+
     // companies Page
-    'companies'         => 'Companies',
-    'create_company'       => 'Add Company',
-    'show_company'      => 'Show Company',
-    'edit_company'      => 'Edit Company',
+    'companies'             => 'Companies',
+    'create_company'        => 'Add Company',
+    'show_company'          => 'Show Company',
+    'edit_company'          => 'Edit Company',
+
+    // members Page
+    'members'               => 'Members',
+    'facebook'              => 'Facebook',
+    'twitter'               => 'Twitter',
+    'linkedin'              => 'Linked In',
+    'create_member'         => 'Add Member',
+    'show_member'           => 'Show Member',
+    'edit_member'           => 'Edit Member',
 
 ];

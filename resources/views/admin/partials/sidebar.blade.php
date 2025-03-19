@@ -52,7 +52,7 @@
 
         <!-- Subscribers -->
         <ul class="navbar-nav flex-fill w-100 mb-2">
-            <x-sidebar-tab-component href="{{ route('admin.subscribers.index') }}" icon="fe-users"
+            <x-sidebar-tab-component href="{{ route('admin.subscribers.index') }}" icon="fe-user-check"
                 name="{{ __('keywords.subscribers') }}"></x-sidebar-tab-component>
         </ul>
 
@@ -66,6 +66,12 @@
         <ul class="navbar-nav flex-fill w-100 mb-2">
             <x-sidebar-tab-component href="{{ route('admin.companies.index') }}" icon="fe-globe"
                 name="{{ __('keywords.companies') }}"></x-sidebar-tab-component>
+        </ul>
+        
+        <!-- members -->
+        <ul class="navbar-nav flex-fill w-100 mb-2">
+            <x-sidebar-tab-component href="{{ route('admin.members.index') }}" icon="fe-users"
+                name="{{ __('keywords.members') }}"></x-sidebar-tab-component>
         </ul>
 
     </nav>
