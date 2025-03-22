@@ -22,12 +22,12 @@ class StoreMemberRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string',
-            'position' => 'required|string',
-            'image' => 'required|mimes:png,jpg',
-            'facebook' => 'required|string',
-            'twitter' => 'required|string',
-            'linkedin' => 'required|string',
+            'name'      => 'required|string',
+            'position'  => 'required|string',
+            'image'     => 'required|mimes:png,jpg',
+            'facebook'  => 'required|string',
+            'twitter'   => 'required|string',
+            'linkedin'  => 'required|string',
         ];
     }
 
