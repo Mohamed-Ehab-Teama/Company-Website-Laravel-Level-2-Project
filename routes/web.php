@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\FeatureController;
+use App\Http\Controllers\FrontController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\SubscriberController;
@@ -14,11 +15,26 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 
 // Fornt Routes
-Route::name('front.')->group(function () {
-    Route::view('/', 'front.index')->name('index');
-    Route::view('/about', 'front.about')->name('about');
-    Route::view('/contact', 'front.contact')->name('contact');
-    Route::view('/services', 'front.services')->name('services');
+Route::name('front.')->controller(FrontController::class)->group(function () {
+
+    // Home Page
+    Route::get('/', 'index')->name('index');
+
+    // About Page
+    Route::get('/about', 'about')->name('about');
+        
+    // Contact Page
+    Route::get('/contact', 'contact')->name('contact');
+    
+    // Services Page
+    Route::get('/services', 'services')->name('services');
+
+    // Store Subscriber
+    Route::post('/subscriber/store', 'subscriberStore')->name('subscriber.store');
+
+    // Store Contact
+    Route::post('/contact/store', 'contactStore')->name('contact.store');
+
 });
 
 
