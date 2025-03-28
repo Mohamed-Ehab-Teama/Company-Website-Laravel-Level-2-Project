@@ -15,9 +15,10 @@ class SettingResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'our_address' => $this->address,
-            'our_phone_number' => $this->phone,
-            'our_email' => $this->email,
+            'address'       => $this->address,
+            'phone_number'  => $this->phone,
+            'email'         => $this->email,
+            'linked_in'     => $this->linkedin,
         ];
     }
 }
