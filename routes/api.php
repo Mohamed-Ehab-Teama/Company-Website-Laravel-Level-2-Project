@@ -22,8 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-// Note: In the Route Service Provider, we made a prefix 'api/' for the whole api routes
 
-Route::get('/settings', SettingController::class);
-
-Route::post('/storeService', StoreServiceController::class);
