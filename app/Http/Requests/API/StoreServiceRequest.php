@@ -6,7 +6,7 @@ use App\Helpers\ApiResponse;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\ValidationException;
 
-class ServiceRequest extends FormRequest
+class StoreServiceRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -17,14 +17,15 @@ class ServiceRequest extends FormRequest
     }
 
 
-    protected function failedValidation(\Illuminate\Contracts\Validation\Validator $validator)
+    public function failedValidation(\Illuminate\Contracts\Validation\Validator $validator)
     {
-        if ( $this->is('api/*') )
+        if ($this->is('api/*'))
         {
             $response = ApiResponse::sendResponse(422, 'Validation Errors', $validator->errors());
-            throw new ValidationException( $validator, $response);
+            throw new ValidationException( $validator, $response );
         }
     }
+
 
     /**
      * Get the validation rules that apply to the request.
@@ -39,14 +40,14 @@ class ServiceRequest extends FormRequest
             'description' => 'required',
         ];
     }
-    
-    
-    public function attributes(): array
+
+
+    public function attributes()
     {
         return [
-            'name' => 'Name',
-            'icon' => 'Icon',
-            'description' => 'Description',
+            'name' => __('keywords.name'),
+            'icon' => __('keywords.icon'),
+            'description' => __('keywords.description'),
         ];
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\ServiceController;
 use App\Http\Controllers\API\SettingController;
 use App\Http\Controllers\API\StoreServiceController;
 use Illuminate\Http\Request;
@@ -21,5 +22,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
+Route::controller(ServiceController::class)->group(function () {
+    route::get('/services', 'index');
+    route::post('/services/create', 'store');
+    route::get('/services/show/{id}', 'show');
+    route::post('/services/update/{id}', 'update');
+    route::get('/services/delete/{id}', 'destroy');
+});
 
