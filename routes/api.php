@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\FeatureController;
 use App\Http\Controllers\API\ServiceController;
 use App\Http\Controllers\API\SettingController;
 use App\Http\Controllers\API\StoreServiceController;
@@ -22,6 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// Services API
 Route::controller(ServiceController::class)->group(function () {
     route::get('/services', 'index');
     route::post('/services/create', 'store');
@@ -30,3 +32,11 @@ Route::controller(ServiceController::class)->group(function () {
     route::get('/services/delete/{id}', 'destroy');
 });
 
+// Features API
+Route::controller(FeatureController::class)->group(function () {
+    Route::get('/features', 'index');
+    Route::get('/features/{id}', 'show');
+    Route::post('/features/create', 'store');
+    Route::post('/features/update/{id}', 'update');
+    Route::get('/features/delete/{id}', 'destroy');
+});
