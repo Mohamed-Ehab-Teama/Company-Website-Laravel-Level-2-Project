@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\FeatureController;
+use App\Http\Controllers\API\MessageController;
 use App\Http\Controllers\API\ServiceController;
 use App\Http\Controllers\API\SettingController;
 use App\Http\Controllers\API\StoreServiceController;
@@ -39,4 +40,12 @@ Route::controller(FeatureController::class)->group(function () {
     Route::post('/features/create', 'store');
     Route::post('/features/update/{id}', 'update');
     Route::get('/features/delete/{id}', 'destroy');
+});
+
+// Messages Module
+Route::controller(MessageController::class)->group(function () {
+    Route::get('/messages', 'index');
+    Route::get('/message/{id}', 'show');
+    Route::post('messages/create', 'store');
+    Route::get('/message/delete/{id}', 'destroy');
 });
