@@ -49,3 +49,9 @@ Route::controller(MessageController::class)->group(function () {
     Route::post('messages/create', 'store');
     Route::get('/message/delete/{id}', 'destroy');
 });
+
+// Settings Module
+Route::controller(SettingController::class)->group(function () {
+    Route::get('/settings', 'index');
+    Route::post('/settings/update', 'update');
+});
