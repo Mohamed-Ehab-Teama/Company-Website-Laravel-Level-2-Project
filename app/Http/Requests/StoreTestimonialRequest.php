@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use App\Helpers\ApiResponse;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\ValidationException;
 
 class StoreTestimonialRequest extends FormRequest
 {
@@ -12,6 +14,13 @@ class StoreTestimonialRequest extends FormRequest
     public function authorize(): bool
     {
         return true;
+    }
+
+
+    public function failedValidation(\Illuminate\Contracts\Validation\Validator $validator)
+    {
+        $response = ApiResponse::sendResponse(422, "Validation Errors", $validator->errors());
+        throw new ValidationException($validator, $response);
     }
 
     /**

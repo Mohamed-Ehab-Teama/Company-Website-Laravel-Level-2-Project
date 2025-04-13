@@ -6,6 +6,7 @@ use App\Http\Controllers\API\ServiceController;
 use App\Http\Controllers\API\SettingController;
 use App\Http\Controllers\API\StoreServiceController;
 use App\Http\Controllers\API\SubscriberController;
+use App\Http\Controllers\API\TestimonialController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -61,4 +62,13 @@ Route::controller(SettingController::class)->group(function () {
 Route::controller(SubscriberController::class)->group(function () {
     Route::get('/subscribers', 'index');
     Route::post('/subscribers/create', 'store');
+});
+
+// Testimonials Module
+Route::controller(TestimonialController::class)->group(function () {
+    Route::get('/testimonials', 'index');
+    Route::get('/testimonials/show/{id}', 'show');
+    Route::post('/testimonials/create', 'store');
+    Route::post('/testimonials/update/{id}', 'update');
+    Route::get('/testimonials/delete/{id}', 'destroy');
 });
