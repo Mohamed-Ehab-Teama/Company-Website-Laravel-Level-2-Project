@@ -5,6 +5,7 @@ use App\Http\Controllers\API\MessageController;
 use App\Http\Controllers\API\ServiceController;
 use App\Http\Controllers\API\SettingController;
 use App\Http\Controllers\API\StoreServiceController;
+use App\Http\Controllers\API\SubscriberController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -54,4 +55,10 @@ Route::controller(MessageController::class)->group(function () {
 Route::controller(SettingController::class)->group(function () {
     Route::get('/settings', 'index');
     Route::post('/settings/update', 'update');
+});
+
+// Subscribers Module
+Route::controller(SubscriberController::class)->group(function () {
+    Route::get('/subscribers', 'index');
+    Route::post('/subscribers/create', 'store');
 });
