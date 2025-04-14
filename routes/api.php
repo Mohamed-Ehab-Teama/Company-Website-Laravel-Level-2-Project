@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\API\CompanyController;
 use App\Http\Controllers\API\FeatureController;
+use App\Http\Controllers\API\MemberController;
 use App\Http\Controllers\API\MessageController;
 use App\Http\Controllers\API\ServiceController;
 use App\Http\Controllers\API\SettingController;
@@ -71,4 +73,22 @@ Route::controller(TestimonialController::class)->group(function () {
     Route::post('/testimonials/create', 'store');
     Route::post('/testimonials/update/{id}', 'update');
     Route::get('/testimonials/delete/{id}', 'destroy');
+});
+
+// Comapnies Module
+Route::controller(CompanyController::class)->group(function () {
+    Route::get('/companies', 'index');
+    Route::get('/companies/show/{id}', 'show');
+    Route::post('/companies/create', 'store');
+    Route::post('/companies/update/{id}', 'update');
+    Route::get('/companies/delete/{id}', 'destroy');
+});
+
+// Members Module
+Route::controller(MemberController::class)->group(function () {
+    Route::get('/members', 'index');
+    Route::get('/members/show/{id}', 'show');
+    Route::post('/members/create', 'store');
+    Route::post('/members/update/{id}', 'update');
+    Route::get('/members/delete/{id}', 'destroy');
 });
